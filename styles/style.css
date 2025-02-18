@@ -86,3 +86,32 @@ ol {
   align-items: flex-start;
   max-width: 711px;
 }
+
+.page {
+  display: flex;
+  justify-content: center;
+  inline-size: 1200px;
+  block-size: 100%;
+  margin: auto;
+  padding: 133px 20px;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+}
+
+.content {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+}
+
+.result__video-container {
+  padding-top: 78px;
+}
+
+.search-form {
+  display: flex;
+  column-gap: 40px;
+}
