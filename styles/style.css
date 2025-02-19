@@ -93,7 +93,6 @@ ol {
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
-  padding: 133px 20px;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
@@ -103,15 +102,40 @@ ol {
 .content {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 30px;
+  grid-template-columns: 711px 399px;
 }
 
 .result__video-container {
-  padding-top: 78px;
+  max-width: 711px;
+  margin-bottom: 16px;
+}
+
+.result__video {
+  width: 100%;
+  object-fit: cover;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.content__list-item {
+
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content__video-card-thumbnail {
+  object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
   display: flex;
-  column-gap: 40px;
+  justify-content: space-between;
 }
