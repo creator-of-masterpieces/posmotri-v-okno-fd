@@ -96,73 +96,6 @@ ol {
   max-width: 711px;
 }
 
-.search-form__fieldset-title {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.2;
-}
-
-.search-form__textfield {
-  border: 0;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  font-family: Fira Sans Condensed;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.2;
-  color: #fff;
-  appearance: none;
-}
-
-.search-form__checkbox-list {
-  display: flex;
-  align-items: center;
-  column-gap: 15px;
-}
-
-.search-form__pseudo-checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 19px;
-  height: 19px;
-  padding: 1px;
-  border: 1px solid #fff;
-}
-
-.search-form__pseudo-checkbox::after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  background-color: transparent;
-}
-
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
-  background-color: #fff;
-}
-
-.search-form__label {
-  display: flex;
-  width: fit-content;
-  align-items: center;
-  column-gap: 5px;
-  cursor: pointer;
-}
-
-.search-form__label:has(input:focus-visible) {
-  outline: none;
-}
-
-.search-form__label:has(input:focus-visible) {
-  outline: 1px solid #fff;
-}
-
-.search-form__label:hover .search-form__label-text {
-  text-decoration: underline;
-}
-
-
-
 
 .result__video-container {
   max-width: 711px;
@@ -195,35 +128,6 @@ ol {
 .content__video-card-thumbnail {
   object-fit: cover;
   object-position: center;
-}
-
-.content__accent {
-  color: #545050;
-}
-
-.content__card-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.content__video-card-title {
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 1;
-  text-transform: uppercase;
-  text-wrap: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.content__video-card-description {
-  margin-top: 6px;
-  font-family: 'Fira Sans Condensed';
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 0.9;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
 }
 
 .title {
