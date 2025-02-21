@@ -1,6 +1,6 @@
 .preloader {
   /* временно скрыл прелоадер */
-  display: none; 
+  display: none;
   position: absolute;
   inset: 0;
   display: flex;

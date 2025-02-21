@@ -45,7 +45,7 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgb(217 217 217 / 10%);
+  background: rgb(217 217 217 / 0.1);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -58,7 +58,7 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   block-size: 100%;
   margin: auto;
   color: #fff;
@@ -78,26 +78,27 @@ ol {
   inline-size: 1140px;
 }
 
-.content__details {
-  max-height: 534px;
-  overflow-y: auto;
-  font-family: Oswald;
-}
+/* result */
 
-.content__list-container {
+.result__video-container {
   position: relative;
-  padding-top: 236px;
+  max-width: 711px;
+  margin-bottom: 16px;
 }
 
-.content__list {
-  padding-right: 3px;
-  padding-left: 3px;
+.result__video {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
 }
+
+/* search-form */
 
 .search-form {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   max-width: 711px;
 }
 
@@ -108,27 +109,21 @@ ol {
   line-height: 1.2;
 }
 
-.search-form__checkbox-list {
+.search-form__label {
   display: flex;
+  width: fit-content;
   column-gap: 15px;
-  align-items: center;
+  cursor: pointer;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::after{
-  background-color: #fff;
+.search-form__label:has(input:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
-.search-form__pseudo-checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.search-form__pseudo-checkbox::after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  background-color: transparent;
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .search-form__textfield {
@@ -145,28 +140,138 @@ ol {
 .search-form__textfield:focus {
   outline: none;
 }
-.search-form__label:has(input:focus-visible) {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-}
 
-.search-form__label {
+.search-form__checkbox-list {
   display: flex;
-  width: fit-content;
   column-gap: 15px;
-  cursor: pointer;
+  align-items: center;
 }
 
-.search-form__label:hover .search-form__label-text {
+.search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  background-color: #fff;
+}
+
+.search-form__submit-button {
+  align-self: flex-end;
+}
+
+/* content__details */
+
+.content__details {
+  max-height: 534px;
+  overflow-y: auto;
+  font-family: Oswald;
+}
+
+.title {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  padding-bottom: 26px;
+  background-color: #1b1919;
+  font-size: 75px;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list-container {
+  position: relative;
+  padding-top: 236px;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+.content__list-item {
+  border-radius: 0;
+}
+
+.content__list-item:hover {
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.content__list-item:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__list-item:has(.content__card-link_current) {
+  background-color: #545050;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.content__video-card-description-container {
+  max-width: 185px;
+  flex-grow: 1;
+}
+
+.content__video-card-title {
+  margin-bottom: 6px;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 5px;
+  text-overflow: ellipsis;
+}
+
+.content__video-card-description {
+  font-family: 'Fira Sans Condensed';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 0.9;
+  -webkit-line-clamp: 4;
+  -ms-flex-line-pack: 4;
+  line-clamp: 4;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .button {
   border: 1px solid #fff;
   border-radius: 0;
   padding: 6px 73px;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed';
   font-weight: 700;
   font-size: 18px;
   line-height: 1.2;
@@ -194,109 +299,6 @@ ol {
   background-color: #545050;
 }
 
-.search-form__submit-button {
-  align-self: flex-end;
-}
-
 .more-button {
   width: 100%;
-}
-
-.search-form__pseudo-checkbox {
-  width: 19px;
-  height: 19px;
-  border: 1px solid #fff;
-}
-
-.result__video-container {
-  position: relative;
-  max-width: 711px;
-  margin-bottom: 16px;
-}
-
-.result__video {
-  width: 100%;
-  max-height: 386px;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.content__list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 30px;
-}
-
-.content__card-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.content__video-card {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.content__list-item {
-  border-radius: 0;
-}
-
-.content__list-item:has(.content__card-link_current) {
-  background-color: #545050;
-}
-
-.content__list-item:hover {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.content__list-item:focus-visible {
-  outline: 1px solid #fff;
-}
-
-.content__video-card-description-container {
-  max-width: 185px;
-  flex-grow: 1;
-}
-
-.content__video-card-title {
-  margin-bottom: 6px;
-  font-size: 30px;
-  line-height: 1;
-  text-transform: uppercase;
-  white-space: nowrap;
-  overflow: hidden;
-  padding-right: 5px;
-  text-overflow: ellipsis;
-}
-
-.content__video-card-description {
-  font-family: 'Fira Sans Condensed';
-  font-weight: 400;
-  font-size: 18px;
-  line-height: .9;
-  -webkit-line-clamp: 4;
-  -ms-flex-line-pack: 4;
-  line-clamp: 4;
-  }
-
-.content__video-card-thumbnail {
-  width: 194px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.content__accent {
-  color: #545050;
-}
-
-.title {
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  background-color: #1b1919;
-  font-size: 75px;
-  line-height: 0.94;
-  text-transform: uppercase;
 }
