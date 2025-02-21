@@ -157,6 +157,46 @@ ol {
   text-underline-offset: 2px;
 }
 
+.button {
+  border: 1px solid #fff;
+  border-radius: 0;
+  padding: 6px 73px;
+  font-family: Fira Sans Condensed;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.search-form__submit-button {
+  align-self: flex-end;
+}
+
+.more-button {
+  width: 100%;
+}
+
 .search-form__pseudo-checkbox {
   width: 19px;
   height: 19px;
