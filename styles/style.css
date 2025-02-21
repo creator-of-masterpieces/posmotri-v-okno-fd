@@ -103,6 +103,66 @@ ol {
   line-height: 1.2;
 }
 
+.search-form__checkbox-list {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after{
+  background-color: #fff;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+}
+
+.search-form__textfield {
+  appearance: none;
+  background-color: transparent;
+  width: 225px;
+  border: 1px solid #fff;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  font: inherit;
+  color: inherit;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+.search-form__label:has(input:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__label {
+  display: flex;
+  width: fit-content;
+  column-gap: 15px;
+  cursor: pointer;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+}
+
 .result__video-container {
   max-width: 711px;
   margin-bottom: 16px;
