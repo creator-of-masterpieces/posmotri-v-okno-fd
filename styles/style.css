@@ -315,6 +315,8 @@ ol {
 }
 
 .more-button {
-  width: 99%;
+  width: 98%;
   margin-right: 3px;
+  margin-left: 2px;
+  margin-bottom: 2px;
 }
