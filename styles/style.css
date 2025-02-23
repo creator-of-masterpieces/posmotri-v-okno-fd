@@ -238,6 +238,10 @@ ol {
   outline: 1px solid #fff;
 }
 
+.content__card-link:active {
+  background-color: #545050;
+}
+
 .content__video-card {
   display: flex;
   align-items: flex-start;
